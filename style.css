@@ -362,3 +362,87 @@ body {
   .slider-btn:hover {
     background: #1b5e20;
   }
+
+  /* ============================= */
+/* ====== SECTION PRODUK ======= */
+/* ============================= */
+
+.produk-section {
+    max-width: 1200px;
+    margin: 40px auto 120px auto;
+    padding: 0 20px;
+}
+
+/* grid produk */
+.produk-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+}
+
+/* kartu produk */
+.card {
+    background: white;
+    padding: 30px 25px;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.35s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border-bottom: 5px solid transparent;
+    cursor: pointer;
+}
+
+/* efek mengambang */
+.card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.18);
+    border-bottom: 5px solid #1f6f54; /* selaras warna navbar */
+}
+
+/* gambar produk */
+.card img {
+    width: 170px;
+    height: auto;
+    margin-bottom: 15px;
+    transition: transform 0.35s ease;
+}
+
+/* efek zoom gambar */
+.card:hover img {
+    transform: scale(1.08);
+}
+
+/* judul produk */
+.card h2 {
+    margin: 10px 0;
+    font-size: 26px;
+    letter-spacing: 1px;
+    color: #1f6f54;
+}
+
+/* deskripsi */
+.card p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 15px;
+    margin-bottom: 22px;
+}
+
+/* tombol detail */
+.btn {
+    display: inline-block;
+    background: #1f6f54;
+    color: white;
+    padding: 11px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* hover tombol */
+.btn:hover {
+    background: #14543f;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(31,111,84,0.35);
+}
