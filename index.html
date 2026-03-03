@@ -21,18 +21,51 @@
     </nav>
 </header>
 <main class="main-content">
-    <section class="container-tentang">
-        <div class="grid-tentang">
+    <section class="container-tentang">   
+      <div class="slider-wrapper">
+        <div class="slider-track">
+          <div class="grid-tentang slide">
             <div class="judul-kiri">
-                <span class="sub-title">TENTANG KAMI123</span>
-                <h2>Visi dan <br> <span class="highlight">Pertumbuhan</span> <br> Jangka Panjang</h2>
+              <span class="sub-title">TENTANG KAMI</span>
+              <h2>Visi dan <br> <span class="highlight">Pertumbuhan</span> <br> Jangka Panjang</h2>
             </div>
             <div class="teks-kanan">
-                <p>Dari lahan <strong>tumbuTANI Nusantara</strong> di Tasikmalaya, kami membangun mimpi untuk pertanian Indonesia yang lebih mandiri dan modern.</p>
-                <p>Kami percaya bahwa inovasi hulu ke hilir adalah kunci kesejahteraan petani di seluruh pelosok negeri.</p>
+              <p>Dari lahan <strong>tumbuTANI Nusantara</strong> di Tasikmalaya, kami membangun mimpi untuk pertanian Indonesia yang lebih mandiri dan modern.</p>
+              <p>Kami percaya bahwa inovasi hulu ke hilir adalah kunci kesejahteraan petani di seluruh pelosok negeri.</p>
             </div>
+          </div>
+  
+          <div class="grid-tentang slide">
+            <div class="judul-kiri">
+              <span class="sub-title">INOVASI</span>
+              <h2>Teknologi dan <br> <span class="highlight">Modernisasi</span> <br> Pertanian</h2>
+            </div>
+            <div class="teks-kanan">
+              <p>Kami mengintegrasikan teknologi pertanian modern untuk meningkatkan produktivitas dan kualitas hasil panen.</p>
+              <p>Digitalisasi dan efisiensi menjadi fondasi pertumbuhan berkelanjutan.</p>
+            </div>
+          </div>
+  
+          <div class="grid-tentang slide">
+            <div class="judul-kiri">
+              <span class="sub-title">KEMITRAAN</span>
+              <h2>Kolaborasi <br> <span class="highlight">Berkelanjutan</span> <br> untuk Negeri</h2>
+            </div>
+            <div class="teks-kanan">
+              <p>Kami membangun jaringan kemitraan strategis dengan petani, distributor, dan pelaku industri.</p>
+              <p>Bersama, kami menciptakan ekosistem pertanian yang kuat dan berdaya saing global.</p>
+            </div>
+          </div>
+  
         </div>
+  
+        <button class="slider-btn prev">&#10094;</button>
+        <button class="slider-btn next">&#10095;</button>
+  
+      </div>
+  
     </section>
+  </main>
 
 
 
@@ -60,5 +93,56 @@
     <span>Kontak Kami!</span> | <span>+62 822-6006-7197</span> | <span>tumbutaninusantara@gmail.com</span>
 </footer>
     
+
+<script>
+    const track = document.querySelector('.slider-track');
+    const slides = document.querySelectorAll('.slide');
+    const nextBtn = document.querySelector('.next');
+    const prevBtn = document.querySelector('.prev');
+  
+    let index = 1;
+    const slideWidth = slides[0].clientWidth;
+  
+    const firstClone = slides[0].cloneNode(true);
+    const lastClone = slides[slides.length - 1].cloneNode(true);
+  
+    track.appendChild(firstClone);
+    track.insertBefore(lastClone, slides[0]);
+  
+    const allSlides = document.querySelectorAll('.slide');
+  
+    track.style.transform = `translateX(-${slideWidth}px)`;
+  
+    function moveSlide() {
+      track.style.transition = "transform 0.6s ease-in-out";
+      track.style.transform = `translateX(-${slideWidth * index}px)`;
+    }
+  
+    nextBtn.addEventListener('click', () => {
+      if (index >= allSlides.length - 1) return;
+      index++;
+      moveSlide();
+    });
+  
+    prevBtn.addEventListener('click', () => {
+      if (index <= 0) return;
+      index--;
+      moveSlide();
+    });
+  
+    track.addEventListener('transitionend', () => {
+      if (allSlides[index].isSameNode(firstClone)) {
+        track.style.transition = "none";
+        index = 1;
+        track.style.transform = `translateX(-${slideWidth * index}px)`;
+      }
+  
+      if (allSlides[index].isSameNode(lastClone)) {
+        track.style.transition = "none";
+        index = slides.length;
+        track.style.transform = `translateX(-${slideWidth * index}px)`;
+      }
+    });
+  </script>
 </body>
 </html>
