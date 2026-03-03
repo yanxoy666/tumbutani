@@ -36,23 +36,55 @@
     </section>
 
     <section class="solution-grid">
+
         <div class="solusi-card">
             <div class="icon">🌱</div>
             <h3>Pendampingan Petani</h3>
             <p>Edukasi tata kelola pertanian secara intensif untuk meningkatkan kualitas hasil panen cengek domba.</p>
+    
+            <div class="extra-content">
+                <p>
+                    Program pendampingan mencakup pelatihan teknik budidaya, manajemen hama terpadu,
+                    pengelolaan tanah, serta monitoring berkala untuk memastikan hasil panen optimal.
+                    Tim kami terjun langsung ke lapangan untuk mendukung petani.
+                </p>
+            </div>
+    
+            <button class="read-more">Baca Selengkapnya</button>
         </div>
-
+    
         <div class="solusi-card">
             <div class="icon">💰</div>
             <h3>Akses Permodalan</h3>
             <p>Membantu petani mendapatkan dukungan finansial yang transparan dan memudahkan proses budidaya.</p>
+    
+            <div class="extra-content">
+                <p>
+                    Kami bekerja sama dengan lembaga keuangan terpercaya untuk menyediakan
+                    skema pembiayaan ringan, sistem bagi hasil yang adil, dan pendampingan
+                    manajemen keuangan usaha tani.
+                </p>
+            </div>
+    
+            <button class="read-more">Baca Selengkapnya</button>
         </div>
-
+    
         <div class="solusi-card">
             <div class="icon">📈</div>
             <h3>Rantai Pasok Efisien</h3>
             <p>Menghubungkan hasil bumi langsung ke pasar untuk memastikan harga yang adil bagi petani.</p>
+    
+            <div class="extra-content">
+                <p>
+                    Sistem distribusi kami memotong rantai tengkulak dan menghubungkan
+                    petani langsung ke pembeli besar, restoran, dan pasar modern
+                    dengan sistem transparansi harga.
+                </p>
+            </div>
+    
+            <button class="read-more">Baca Selengkapnya</button>
         </div>
+    
     </section>
 
         <section class="timeline-section">
@@ -89,6 +121,23 @@
 <footer class="footer-info">
     <span>Kontak Kami!</span> | <span>+62 822-6006-7197</span> | <span>tumbutaninusantara@gmail.com</span>
 </footer>
+
+<script>
+    const buttons = document.querySelectorAll(".read-more");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            const card = button.parentElement;
+            card.classList.toggle("active");
+
+            if (card.classList.contains("active")) {
+                button.textContent = "Tutup";
+            } else {
+                button.textContent = "Baca Selengkapnya";
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
