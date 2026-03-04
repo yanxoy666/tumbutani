@@ -74,8 +74,6 @@
     font-weight: 600;
     transition: all 0.3s ease;
 }
-
-wadah gambar biar tinggi sama
 .card img {
     width: 100%;
     height: 180px;          /* tinggi seragam */
@@ -98,8 +96,6 @@ wadah gambar biar tinggi sama
     object-fit: contain;
     transition: transform 0.35s ease;
 }
-
-/* zoom halus saat hover */
 .card:hover .img-wrap img {
     transform: scale(1.08);
 }
@@ -113,3 +109,39 @@ wadah gambar biar tinggi sama
     border-radius: 8px;
     margin: 12px 0 18px;
 }
+.judul-produk {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 800;
+  margin: 60px 0 40px;
+
+  background: linear-gradient(90deg, #166534, #1fecab);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  position: relative;
+}
+.judul-produk::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 4px;
+  margin: 15px auto 0;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #166534, #1fecab);
+}
+.judul-produk {
+  animation: fadeDown 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}           

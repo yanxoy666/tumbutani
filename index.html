@@ -43,22 +43,27 @@
     <div class="hero-slide">
       <img src="assets/img/foto2.jpg" alt="">
       <div class="hero-overlay">
+      </div>
+    </div>
 
     <div class="hero-slide">
       <img src="assets/img/foto3.jpg" alt="">
-      <div class="hero-overlay">
+      <div class="hero-overlay">        
+      </div>
+    </div>
 
     <div class="hero-slide">
       <img src="assets/img/foto4.jpg" alt="">
       <div class="hero-overlay">
-       
-
       </div>
     </div>
   </div>
 
   <button class="hero-nav prev">&#10094;</button>
   <button class="hero-nav next">&#10095;</button>
+
+  <!-- Indicator -->
+  <div class="hero-dots"></div>
 </section>
 <!-- <section class="about-slider">
   <h2 class="section-title"></h2>
@@ -239,7 +244,7 @@ setInterval(() => {
 }, 4000);
 </script> -->
 
-<script>
+<!-- <script>
   const track = document.querySelector('.hero-track');
 const slides = document.querySelectorAll('.hero-slide');
 const nextBtn = document.querySelector('.next');
@@ -266,4 +271,147 @@ prevBtn.onclick = () => {
 setInterval(() => {
   nextBtn.click();
 }, 5000);
+</script> -->
+<!-- <script>
+const track = document.querySelector('.hero-track');
+const slides = document.querySelectorAll('.hero-slide');
+const nextBtn = document.querySelector('.next');
+const prevBtn = document.querySelector('.prev');
+const dotsContainer = document.querySelector('.hero-dots');
+
+let index = 0;
+const total = slides.length;
+
+// buat dots otomatis
+slides.forEach((_, i) => {
+  const dot = document.createElement('button');
+  dot.addEventListener('click', () => {
+    index = i;
+    updateSlider();
+  });
+  dotsContainer.appendChild(dot);
+});
+
+const dots = document.querySelectorAll('.hero-dots button');
+
+function updateSlider() {
+  track.style.transform = `translateX(-${index * 100}%)`;
+  dots.forEach(dot => dot.classList.remove('active'));
+  dots[index].classList.add('active');
+}
+
+nextBtn.onclick = () => {
+  index = (index + 1) % total;
+  updateSlider();
+};
+
+prevBtn.onclick = () => {
+  index = (index - 1 + total) % total;
+  updateSlider();
+};
+
+// autoplay
+setInterval(() => {
+  index = (index + 1) % total;
+  updateSlider();
+}, 5000);
+
+updateSlider();
+</script> -->
+<script>
+const track = document.querySelector('.hero-track');
+let slides = document.querySelectorAll('.hero-slide');
+const nextBtn = document.querySelector('.next');
+const prevBtn = document.querySelector('.prev');
+
+let index = 1;
+let startX = 0;
+let isDragging = false;
+let autoSlide;
+
+const firstClone = slides[0].cloneNode(true);
+const lastClone = slides[slides.length - 1].cloneNode(true);
+
+track.appendChild(firstClone);
+track.insertBefore(lastClone, slides[0]);
+
+slides = document.querySelectorAll('.hero-slide');
+
+track.style.transform = `translateX(-${index * 100}%)`;
+
+function updateSlider() {
+  track.style.transition = "transform 0.6s ease-in-out";
+  track.style.transform = `translateX(-${index * 100}%)`;
+}
+
+function startAutoSlide() {
+  autoSlide = setInterval(() => {
+    index++;
+    updateSlider();
+  }, 4000);
+}
+
+function stopAutoSlide() {
+  clearInterval(autoSlide);
+}
+
+nextBtn.onclick = () => {
+  index++;
+  updateSlider();
+};
+
+prevBtn.onclick = () => {
+  index--;
+  updateSlider();
+};
+
+track.addEventListener('transitionend', () => {
+  if (slides[index] === firstClone) {
+    track.style.transition = "none";
+    index = 1;
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  if (slides[index] === lastClone) {
+    track.style.transition = "none";
+    index = slides.length - 2;
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }
+});
+
+
+track.addEventListener("touchstart", e => {
+  startX = e.touches[0].clientX;
+  isDragging = true;
+  stopAutoSlide();
+});
+
+track.addEventListener("touchmove", e => {
+  if (!isDragging) return;
+  const moveX = e.touches[0].clientX;
+  const diff = startX - moveX;
+
+  if (diff > 50) {
+    index++;
+    updateSlider();
+    isDragging = false;
+  }
+
+  if (diff < -50) {
+    index--;
+    updateSlider();
+    isDragging = false;
+  }
+});
+
+track.addEventListener("touchend", () => {
+  isDragging = false;
+  startAutoSlide();
+});
+
+
+track.addEventListener("mouseenter", stopAutoSlide);
+track.addEventListener("mouseleave", startAutoSlide);
+
+startAutoSlide();
 </script>
