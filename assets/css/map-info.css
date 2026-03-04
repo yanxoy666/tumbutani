@@ -1,0 +1,23 @@
+/* MAP */
+.map-box {
+  flex: 1;
+  height: 420px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* INFO */
+.info-box {
+  flex: 1;
+}
+
+.info-box h2 {
+  margin-top: 0;
+  color: #000;
+}
+
+.info-box p {
+  color: #444;
+  line-height: 1.6;
+}

@@ -1,29 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeri</title>
-       <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeri</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/css/galeri.css">
 </head>
 <body>
-<header class="navbar">
-    <h1 class="logo">TumbuTani<span>.Nusantara</span></h1>
-    <nav>
-        <ul class="menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="tentang.html">Tentang Kami</a></li>
-            <li><a href="produk.html">Produk</a></li>
-            <li><a href="galeri.html">Galeri</a></li>
-            <li><a href="mitra.html">Mitra</a></li>
-        </ul>
-    </nav>
+
+<header class="coba">
+  
+  <!-- LOGO + NAMA -->
+  <div class="logo-wrap">
+    <img src="assets/img/logo1.png" alt="Logo TumbuTani" class="logo-img">
+    <h1 class="logo-text">TumbuTani<span>.Nusantara</span></h1>
+  </div>
+
+  <!-- MENU -->
+  <nav>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tentang.html">Tentang Kami</a></li>
+      <li><a href="produk.html">Produk</a></li>
+      <li><a href="galeri.html">Galeri</a></li>
+      <li><a href="mitra.html">Mitra</a></li>
+    </ul>
+  </nav>
+
 </header>
-<h1><center>Galeri Dokumentasi Dari TumbuTani.Nusantara</center></h1>
+
+<h1 class="judul-galeri">Galeri Dokumentasi Dari TumbuTani.Nusantara</h1>
+
+<section class="galeri">
+  <h2>Galeri Kegiatan</h2>
+
+  <div class="galeri-grid">
+
+    <div class="galeri-item">
+      <img src="assets/img/cabai.jpg" alt="Kegiatan 1">
+      <div class="overlay">Panen Bersama</div>
+    </div>
+
+    <div class="galeri-item">
+      <img src="assets/img/g2.jpg" alt="Kegiatan 2">
+      <div class="overlay">Pengolahan Produk</div>
+    </div>
+
+    <div class="galeri-item">
+      <img src="assets/img/g3.jpg" alt="Kegiatan 3">
+      <div class="overlay">Pelatihan Petani</div>
+    </div>
+
+    <div class="galeri-item">
+      <img src="assets/img/g4.jpg" alt="Kegiatan 4">
+      <div class="overlay">Distribusi</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ✅ LIGHTBOX POPUP -->
+<div class="lightbox" id="lightbox">
+  <span class="close">&times;</span>
+  <img class="lightbox-img" id="lightbox-img">
+</div>
+
 <footer class="footer-pro">
   <div class="footer-container">
 
-    <!-- KOLOM 1 -->
     <div class="footer-col about">
       <img src="https://ugc.production.linktr.ee/a7b80433-be7e-4b9b-8e8a-80348120588f_2d07dbedeccd5530edff1f19b74ed481-tplv-tiktokx-cropcenter-1080-1080.jpeg?io=true&size=avatar-v3_0" alt="Logo" class="footer-logo">
       <p>
@@ -39,32 +84,17 @@
       </div>
     </div>
 
-    <!-- KOLOM 2 -->
-    <style>
-      .footer-menu a {
-        color: inherit;       
-        text-decoration: none; 
-        display: block;       
-        padding: 5px 0;      
-      }
-      
-      .footer-menu a:hover {
-        color: #ff6600;       
-      }
-      </style>
-      
-      <div class="footer-col">
-        <h3>Navigasi</h3>
-        <ul class="footer-menu">
-          <li><a href="index.html">› Home</a></li>
-          <li><a href="tentang.html">› Tentang Kami</a></li>
-          <li><a href="produk.html">› Produk</a></li>
-          <li><a href="galeri.html">› Galeri</a></li>
-          <li><a href="mitra.html">› Mitra</a></li>
-        </ul>
-      </div>
+    <div class="footer-col">
+      <h3>Navigasi</h3>
+      <ul class="footer-menu">
+        <li><a href="index.html">› Home</a></li>
+        <li><a href="tentang.html">› Tentang Kami</a></li>
+        <li><a href="produk.html">› Produk</a></li>
+        <li><a href="galeri.html">› Galeri</a></li>
+        <li><a href="mitra.html">› Mitra</a></li>
+      </ul>
+    </div>
 
-    <!-- KOLOM 3 -->
     <div class="footer-col">
       <h3>Alamat & Kontak</h3>
       <p>📍 Batusumur, Kec. Manonjaya, Kabupaten Tasikmalaya, Jawa Barat 46197</p>
@@ -75,10 +105,45 @@
 
   </div>
 
-  <!-- COPYRIGHT -->
   <div class="footer-bottom">
     ©2022 – 2025. TumbuTani.Nusantara | Powered by IT Alomani Team®
   </div>
 </footer>
+
+<!-- ✅ JAVASCRIPT POPUP + ANIMASI -->
+<script>
+// popup
+const imgs = document.querySelectorAll(".galeri-item img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".close");
+
+imgs.forEach(img => {
+  img.addEventListener("click", () => {
+    lightbox.classList.add("show");
+    lightboxImg.src = img.src;
+  });
+});
+
+closeBtn.onclick = () => lightbox.classList.remove("show");
+
+lightbox.addEventListener("click", e => {
+  if (e.target === lightbox) lightbox.classList.remove("show");
+});
+
+// animasi scroll
+const items = document.querySelectorAll(".galeri-item");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.15 });
+
+items.forEach(item => observer.observe(item));
+</script>
+
 </body>
 </html>

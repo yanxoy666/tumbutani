@@ -1,0 +1,23 @@
+/* ===== LOGO NAVBAR ===== */
+
+.logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1f6f54;
+}
+
+.logo-text span {
+    color: #ffcc00;
+}
