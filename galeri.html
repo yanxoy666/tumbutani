@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="assets/css/galeri.css">
 </head>
-<body>
+<body class="company-mode">
 
 <header class="coba">
   
@@ -143,6 +143,46 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.15 });
 
 items.forEach(item => observer.observe(item));
+
+/* ===============================
+   FINAL COMPANY INTERACTION
+================================ */
+
+/* NAVBAR BLUR ON SCROLL */
+const header = document.querySelector(".coba");
+
+window.addEventListener("scroll",()=>{
+  if(window.scrollY > 40){
+    header.classList.add("scrolled");
+  }else{
+    header.classList.remove("scrolled");
+  }
+});
+
+/* TITLE REVEAL */
+const title = document.querySelector(".judul-galeri");
+
+new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+}).observe(title);
+
+/* IMAGE LOAD EFFECT */
+document.querySelectorAll("img").forEach(img=>{
+  img.onload=()=>img.classList.add("loaded");
+});
+
+/* MOUSE SPOTLIGHT EFFECT */
+document.querySelectorAll(".galeri-item").forEach(card=>{
+  card.addEventListener("mousemove",e=>{
+    const rect=card.getBoundingClientRect();
+    card.style.setProperty("--x",`${e.clientX-rect.left}px`);
+    card.style.setProperty("--y",`${e.clientY-rect.top}px`);
+  });
+});
 </script>
 
 </body>

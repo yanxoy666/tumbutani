@@ -619,3 +619,34 @@
     font-size: 34px;
   }
 }
+
+
+/* ================================= */
+/* ===== NAVBAR SPACING FIX ======== */
+/* ================================= */
+
+/* jarak antar menu lebih dekat */
+nav ul {
+    gap: 18px; /* sebelumnya biasanya 30-50px */
+}
+
+/* jika pakai li */
+nav ul li {
+    margin: 0 8px;
+}
+
+/* link menu */
+nav ul li a {
+    padding: 6px 10px;
+    letter-spacing: 0.5px;
+}
+
+/* versi flex navbar */
+.navbar-menu {
+    gap: 18px;
+}
+
+/* hover tetap smooth */
+nav ul li a:hover {
+    transform: translateY(-2px);
+}
