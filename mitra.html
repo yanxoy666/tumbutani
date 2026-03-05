@@ -41,16 +41,15 @@
   </section>
 
   <!-- FILTER TAG -->
-  <section class="mitra-filter">
-      <button class="tag active">SangTani</button>
-      <button class="tag">Kemitraan</button>
-      <button class="tag">CSR</button>
-  </section>
-
+<section class="mitra-filter">
+  <button class="tag active" data-filter="sangtani">SangTani</button>
+  <button class="tag active" data-filter="kemitraan">Kemitraan</button> 
+  <button class="tag active" data-filter="csr">CSR</button>
+</section>
   <!-- GRID PROGRAM -->
   <section class="mitra-grid">
 
-      <div class="mitra-card">
+      <div class="mitra-card" data-category="sangtani">
           <div class="mitra-image"></div>
           <div class="mitra-content">
               <span class="card-tag">SangTani</span>
@@ -60,7 +59,7 @@
           </div>
       </div>
 
-      <div class="mitra-card">
+      <div class="mitra-card" data-category="sangtani">
           <div class="mitra-image"></div>
           <div class="mitra-content">
               <span class="card-tag">SangTani</span>
@@ -70,7 +69,7 @@
           </div>
       </div>
 
-      <div class="mitra-card">
+      <div class="mitra-card" data-category="sangtani">
           <div class="mitra-image"></div>
           <div class="mitra-content">
               <span class="card-tag">Kemitraan</span>
@@ -79,8 +78,34 @@
               <a href="#" class="read-more">Baca Selengkapnya →</a>
           </div>
       </div>
+ </section>
 
-  </section>
+  <!-- TEAM / MITRA -->
+<section class="team-section">
+  <h2 class="team-title">Mengenal Tim Berdedikasi</h2>
+
+  <div class="team-container">
+
+    <!-- MEMBER 1 -->
+    <div class="team-card">
+      <div class="team-photo">
+        <img src="assets/img/adlex.jpg" alt="Adlex">
+      </div>
+      <h3>Adlex</h3>
+      <p>Chief Executive Officer</p>
+    </div>
+
+    <!-- MEMBER 2 -->
+    <div class="team-card">
+      <div class="team-photo">
+        <img src="assets/img/yanx.jpg" alt="Yansoy">
+      </div>
+      <h3>Yansoy</h3>
+      <p>Head of Operations</p>
+    </div>
+  </div>
+
+</section>
   <footer class="footer-pro">
     <div class="footer-container">
 
@@ -100,19 +125,7 @@
         </div>
       </div>
 
-      <!-- KOLOM 2 -->
-      <style>
-        .footer-menu a {
-          color: inherit;       
-          text-decoration: none; 
-          display: block;       
-          padding: 5px 0;      
-        }
-        
-        .footer-menu a:hover {
-          color: #ff6600;       
-        }
-        </style>
+
         
         <div class="footer-col">
           <h3>Navigasi</h3>
@@ -142,5 +155,39 @@
     </div>
 
 
+
+
+
+
+
+    <script>
+const filterBtns = document.querySelectorAll(".tag");
+const cards = document.querySelectorAll(".mitra-card");
+
+filterBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+
+    // tombol aktif
+    filterBtns.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const filter = btn.dataset.filter;
+
+    cards.forEach(card => {
+      const category = card.dataset.category;
+
+      if (filter === "all" || category === filter) {
+        card.classList.remove("hide");
+        card.classList.add("show");
+      } else {
+        card.classList.remove("show");
+        card.classList.add("hide");
+      }
+      });
+
+    });
+  });
+
+</script>
   </body>
   </html>
