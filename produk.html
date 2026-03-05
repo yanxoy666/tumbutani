@@ -49,7 +49,7 @@
       <a href="#" class="btn detail-btn"
         data-title="Semangka"
         data-image="assets/img/semangka.jpg"
-        data-desc="Semangka (Citrullus lanatus) adalah tanaman buah merambat..."
+        data-desc="Semangka (Citrullus lanatus) adalah tanaman buah merambat dari suku labu-labuan (Cucurbitaceae) yang berasal dari Afrika."
         data-price="Rp 75.000">
         Detail
       </a>
@@ -228,10 +228,13 @@
     });
     
     btnBukaForm.addEventListener("click", function() {
-      formPesanan.style.display = "block";
+    btnBukaForm.style.display = "none";
+    formPesanan.style.display = "block";
     });
     
     document.querySelector(".close").onclick = function() {
-      modal.style.display = "none";
-    };
+    modal.style.display = "none";
+    formPesanan.style.display = "none";
+    btnBukaForm.style.display = "block";
+};
     </script>
