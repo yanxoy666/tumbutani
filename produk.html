@@ -96,13 +96,14 @@
       </div>
   </div>
 
-<!-- MODAL DETAIL -->
+<!-- modal jeung detail -->
 <div id="modalDetail" class="modal">
   <div class="modal-content">
-
+    
     <span class="close">&times;</span>
 
     <div class="modal-body">
+      
       <div class="modal-img">
         <img id="modalImage" src="" alt="">
       </div>
@@ -110,9 +111,26 @@
       <div class="modal-info">
         <h2 id="modalTitle"></h2>
         <p id="modalDesc"></p>
-        <div class="modal-price" id="modalPrice"></div>
+        <div id="modalPrice" class="modal-price"></div>
 
-        <a href="#" id="btnBeli" class="btn-beli">Beli Sekarang</a>
+        <button id="btnBukaForm" class="btn-beli">Beli</button>
+
+        <!-- FORM PEMBELIAN -->
+        <form id="formPesanan" method="POST" action="proses_pesan.php" style="display:none; margin-top:20px;">
+          
+          <input type="hidden" name="produk" id="inputProduk">
+          <input type="hidden" name="harga" id="inputHarga">
+
+          <input type="text" name="nama" placeholder="Nama Pembeli" required>
+          <input type="text" name="telepon" placeholder="Nomor Telepon" required>
+          <textarea name="alamat" placeholder="Alamat Tujuan" required></textarea>
+          <input type="number" name="jumlah" placeholder="Jumlah Pembelian" min="1" required>
+
+          <button type="submit" class="btn-submit">
+            Beli Sekarang
+          </button>
+        </form>
+
       </div>
     </div>
 
@@ -186,8 +204,12 @@
     const modalTitle = document.getElementById("modalTitle");
     const modalDesc = document.getElementById("modalDesc");
     const modalPrice = document.getElementById("modalPrice");
-    const btnBeli = document.getElementById("btnBeli");
-    const closeBtn = document.querySelector(".close");
+    
+    const inputProduk = document.getElementById("inputProduk");
+    const inputHarga = document.getElementById("inputHarga");
+    
+    const btnBukaForm = document.getElementById("btnBukaForm");
+    const formPesanan = document.getElementById("formPesanan");
     
     document.querySelectorAll(".detail-btn").forEach(button => {
       button.addEventListener("click", function(e) {
@@ -198,21 +220,18 @@
         modalDesc.textContent = this.dataset.desc;
         modalPrice.textContent = this.dataset.price;
     
-        // Link WhatsApp otomatis isi pesan
-        const pesan = "Halo TumbuTani, saya ingin membeli " + this.dataset.title;
-        btnBeli.href = "https://api.whatsapp.com/send/?phone=6282260067197&text=" + encodeURIComponent(pesan);
+        inputProduk.value = this.dataset.title;
+        inputHarga.value = this.dataset.price;
     
         modal.style.display = "block";
       });
     });
     
-    closeBtn.onclick = function() {
-      modal.style.display = "none";
-    }
+    btnBukaForm.addEventListener("click", function() {
+      formPesanan.style.display = "block";
+    });
     
-    window.onclick = function(e) {
-      if (e.target == modal) {
-        modal.style.display = "none";
-      }
-    }
+    document.querySelector(".close").onclick = function() {
+      modal.style.display = "none";
+    };
     </script>
