@@ -33,7 +33,48 @@
     box-shadow: 0 25px 45px rgba(0,0,0,0.18);
     border-bottom: 5px solid #1f6f54; /* selaras warna navbar */
 }
+.produk-title {
+    text-align: center;
+    font-size: 2.5rem; /* sebelumnya 32px, sekarang lebih fleksibel & proporsional */
+    font-weight: 800;
+    color: #1b5e20;
+    margin-bottom: 50px; /* dikurangi supaya tidak terlalu jauh dari konten */
+    letter-spacing: 1px; /* dikurangi supaya huruf lebih rapih */
+    line-height: 1.2; /* agar baris teks lebih rapi */
+    position: relative;
+    max-width: 900px; /* mencegah teks terlalu melebar di layar besar */
+    margin-left: auto;
+    margin-right: auto;
+}
 
+.produk-title span {
+    display: block;
+    width: 0;
+    height: 4px;
+    background: #43a047;
+    margin: 18px auto 0;
+    border-radius: 20px;
+    animation: lineGrow 1.5s ease forwards;
+}
+
+@keyframes lineGrow {
+    to {
+        width: 120px;
+    }
+}
+
+/* Responsive untuk layar kecil */
+@media (max-width: 768px) {
+    .produk-title {
+        font-size: 1.8rem;
+        letter-spacing: 0.5px;
+        margin-bottom: 40px;
+    }
+
+    .produk-title span {
+        width: 80px;
+    }
+}
 /* gambar produk */
 .card img {
     width: 170px;
