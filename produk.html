@@ -46,7 +46,13 @@
        Dikenal karena buahnya yang besar, berair (sekitar 92% air), dan manis, semangka menjadi camilan populer saat musim panas. 
       </p>
       <div class="price">Rp 75.000</div>
-      <a href="#" class="btn">Detail</a>
+      <a href="#" class="btn detail-btn"
+        data-title="Semangka"
+        data-image="assets/img/semangka.jpg"
+        data-desc="Semangka (Citrullus lanatus) adalah tanaman buah merambat..."
+        data-price="Rp 75.000">
+        Detail
+      </a>
     </div>
     
 
@@ -60,7 +66,13 @@
         Cabai adalah buah dan tumbuhan anggota genus Capsicum (keluarga Solanaceae atau terong-terongan) yang terkenal karena rasa pedasnya, berasal dari Amerika Tropis. Secara botani, cabai diklasifikasikan sebagai buah karena memiliki biji dan tumbuh dari bunga.
       </p>
       <div class="price">Rp 75.000</div>
-      <a href="#" class="btn">Detail</a>
+      <a href="#" class="btn detail-btn"
+        data-title="Cabai"
+        data-image="assets/img/cabai.jpg"
+        data-desc="Cabai adalah buah dan tumbuhan anggota genus Capsicum yang terkenal karena rasa pedasnya dan berasal dari Amerika Tropis."
+        data-price="Rp 75.000">
+          Detail
+        </a>
     </div>
 
     <!-- Produk 3 -->
@@ -74,10 +86,39 @@
  + Asam Humat) yang efektif mencegah rontok bunga/buah, busuk ujung buah, dan mengatasi stres tanaman. Pupuk ini memperkuat dinding sel, sdan merangsang akar, cocok diaplikasikan via kocor (4-5g/liter) atau semprot
       </p>
       <div class="price">Rp 75.000</div>
-      <a href="#" class="btn">Detail</a>
+      <a href="#" class="btn detail-btn"
+        data-title="CAL-HA"
+        data-image="assets/img/pupuk.jpg"
+        data-desc="Cal-Ha adalah pupuk kalsium plus asam humat berbentuk serbuk yang efektif mencegah rontok bunga, busuk ujung buah, dan meningkatkan kekuatan tanaman."
+        data-price="Rp 75.000">
+          Detail
+        </a>
+      </div>
+  </div>
+
+<!-- MODAL DETAIL -->
+<div id="modalDetail" class="modal">
+  <div class="modal-content">
+
+    <span class="close">&times;</span>
+
+    <div class="modal-body">
+      <div class="modal-img">
+        <img id="modalImage" src="" alt="">
+      </div>
+
+      <div class="modal-info">
+        <h2 id="modalTitle"></h2>
+        <p id="modalDesc"></p>
+        <div class="modal-price" id="modalPrice"></div>
+
+        <a href="#" id="btnBeli" class="btn-beli">Beli Sekarang</a>
+      </div>
     </div>
 
   </div>
+</div>
+
 </section>
 <footer class="footer-pro">
   <div class="footer-container">
@@ -139,6 +180,39 @@
     ©2022 – 2025. TumbuTani.Nusantara | Powered by IT Alomani Team®
   </div>
 
-
-</body>
-</html>
+  <script>
+    const modal = document.getElementById("modalDetail");
+    const modalImage = document.getElementById("modalImage");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalDesc = document.getElementById("modalDesc");
+    const modalPrice = document.getElementById("modalPrice");
+    const btnBeli = document.getElementById("btnBeli");
+    const closeBtn = document.querySelector(".close");
+    
+    document.querySelectorAll(".detail-btn").forEach(button => {
+      button.addEventListener("click", function(e) {
+        e.preventDefault();
+    
+        modalImage.src = this.dataset.image;
+        modalTitle.textContent = this.dataset.title;
+        modalDesc.textContent = this.dataset.desc;
+        modalPrice.textContent = this.dataset.price;
+    
+        // Link WhatsApp otomatis isi pesan
+        const pesan = "Halo TumbuTani, saya ingin membeli " + this.dataset.title;
+        btnBeli.href = "https://api.whatsapp.com/send/?phone=6282260067197&text=" + encodeURIComponent(pesan);
+    
+        modal.style.display = "block";
+      });
+    });
+    
+    closeBtn.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    window.onclick = function(e) {
+      if (e.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
