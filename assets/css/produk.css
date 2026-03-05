@@ -3,152 +3,152 @@
 /* ============================= */
 
 .produk-section {
-    max-width: 1200px;
-    margin: 40px auto 120px auto;
-    padding: 0 20px;
+  max-width: 1200px;
+  margin: 40px auto 120px auto;
+  padding: 0 20px;
 }
 
 /* grid produk */
 .produk-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 35px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
 }
 
 /* kartu produk */
 .card {
-    background: white;
-    padding: 30px 25px;
-    border-radius: 20px;
-    text-align: center;
-    transition: all 0.35s ease;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    border-bottom: 5px solid transparent;
-    cursor: pointer;
+  background: white;
+  padding: 30px 25px;
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.35s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-bottom: 5px solid transparent;
+  cursor: pointer;
 }
 
 /* efek mengambang */
 .card:hover {
-    transform: translateY(-12px) scale(1.02);
-    box-shadow: 0 25px 45px rgba(0,0,0,0.18);
-    border-bottom: 5px solid #1f6f54; /* selaras warna navbar */
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.18);
+  border-bottom: 5px solid #1f6f54; /* selaras warna navbar */
 }
 .produk-title {
-    text-align: center;
-    font-size: 2.5rem; /* sebelumnya 32px, sekarang lebih fleksibel & proporsional */
-    font-weight: 800;
-    color: #1b5e20;
-    margin-bottom: 50px; /* dikurangi supaya tidak terlalu jauh dari konten */
-    letter-spacing: 1px; /* dikurangi supaya huruf lebih rapih */
-    line-height: 1.2; /* agar baris teks lebih rapi */
-    position: relative;
-    max-width: 900px; /* mencegah teks terlalu melebar di layar besar */
-    margin-left: auto;
-    margin-right: auto;
+  text-align: center;
+  font-size: 2.5rem; /* sebelumnya 32px, sekarang lebih fleksibel & proporsional */
+  font-weight: 800;
+  color: #1b5e20;
+  margin-bottom: 50px; /* dikurangi supaya tidak terlalu jauh dari konten */
+  letter-spacing: 1px; /* dikurangi supaya huruf lebih rapih */
+  line-height: 1.2; /* agar baris teks lebih rapi */
+  position: relative;
+  max-width: 900px; /* mencegah teks terlalu melebar di layar besar */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .produk-title span {
-    display: block;
-    width: 0;
-    height: 4px;
-    background: #43a047;
-    margin: 18px auto 0;
-    border-radius: 20px;
-    animation: lineGrow 1.5s ease forwards;
+  display: block;
+  width: 0;
+  height: 4px;
+  background: #43a047;
+  margin: 18px auto 0;
+  border-radius: 20px;
+  animation: lineGrow 1.5s ease forwards;
 }
 
 @keyframes lineGrow {
-    to {
-        width: 120px;
-    }
+  to {
+    width: 120px;
+  }
 }
 
 /* Responsive untuk layar kecil */
 @media (max-width: 768px) {
-    .produk-title {
-        font-size: 1.8rem;
-        letter-spacing: 0.5px;
-        margin-bottom: 40px;
-    }
+  .produk-title {
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 40px;
+  }
 
-    .produk-title span {
-        width: 80px;
-    }
+  .produk-title span {
+    width: 80px;
+  }
 }
 /* gambar produk */
 .card img {
-    width: 170px;
-    height: auto;
-    margin-bottom: 15px;
-    transition: transform 0.35s ease;
+  width: 170px;
+  height: auto;
+  margin-bottom: 15px;
+  transition: transform 0.35s ease;
 }
 
 /* efek zoom gambar */
 .card:hover img {
-    transform: scale(1.08);
+  transform: scale(1.08);
 }
 
 /* judul produk */
 .card h2 {
-    margin: 10px 0;
-    font-size: 26px;
-    letter-spacing: 1px;
-    color: #1f6f54;
+  margin: 10px 0;
+  font-size: 26px;
+  letter-spacing: 1px;
+  color: #1f6f54;
 }
 
 /* deskripsi */
 .card p {
-    color: #555;
-    line-height: 1.7;
-    font-size: 15px;
-    margin-bottom: 22px;
+  color: #555;
+  line-height: 1.7;
+  font-size: 15px;
+  margin-bottom: 22px;
 }
 
 /* tombol detail */
 .btn {
-    display: inline-block;
-    background: #1f6f54;
-    color: white;
-    padding: 11px 28px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
+  display: inline-block;
+  background: #1f6f54;
+  color: white;
+  padding: 11px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 .card img {
-    width: 100%;
-    height: 180px;          /* tinggi seragam */
-    object-fit: contain;    /* gambar mengecil proporsional */
-    display: block;
-    margin: 0 auto 15px;
-    transition: transform 0.35s ease;
+  width: 100%;
+  height: 180px; /* tinggi seragam */
+  object-fit: contain; /* gambar mengecil proporsional */
+  display: block;
+  margin: 0 auto 15px;
+  transition: transform 0.35s ease;
 }
 .img-wrap {
-    height: 190px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 15px;
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
 }
 
 .img-wrap img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    transition: transform 0.35s ease;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.35s ease;
 }
 .card:hover .img-wrap img {
-    transform: scale(1.08);
+  transform: scale(1.08);
 }
 .price {
-    display: inline-block;
-    background: #e8f5e9;
-    color: #1f6f54;
-    font-weight: 800;
-    font-size: 20px;
-    padding: 6px 14px;
-    border-radius: 8px;
-    margin: 12px 0 18px;
+  display: inline-block;
+  background: #e8f5e9;
+  color: #1f6f54;
+  font-weight: 800;
+  font-size: 20px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  margin: 12px 0 18px;
 }
 .judul-produk {
   text-align: center;
@@ -185,240 +185,255 @@
     opacity: 1;
     transform: translateY(0);
   }
-}           
+}
 /* BACKGROUND GELAP */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    padding-top: 80px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.6);
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* BOX MODAL */
+.modal-content {
+  background: white;
+  margin: auto;
+  padding: 20px;
+  width: 70%;
+  border-radius: 10px;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ISI FLEX */
+.modal-body {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* FOTO */
+.modal-img img {
+  width: 250px;
+  border-radius: 10px;
+}
+
+/* INFO */
+.modal-info {
+  flex: 1;
+}
+
+.modal-price {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: green;
+}
+
+/* TOMBOL CLOSE */
+.close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ANIMASI */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
   }
-  
-  /* BOX MODAL */
-  .modal-content {
-    background: white;
-    margin: auto;
-    padding: 20px;
-    width: 70%;
-    border-radius: 10px;
-    position: relative;
-    animation: fadeIn 0.3s ease-in-out;
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
-  
-  /* ISI FLEX */
-  .modal-body {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-  }
-  
-  /* FOTO */
-  .modal-img img {
-    width: 250px;
-    border-radius: 10px;
-  }
-  
-  /* INFO */
-  .modal-info {
-    flex: 1;
-  }
-  
-  .modal-price {
-    margin-top: 15px;
-    font-size: 20px;
-    font-weight: bold;
-    color: green;
-  }
-  
-  /* TOMBOL CLOSE */
-  .close {
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    font-size: 28px;
-    cursor: pointer;
-  }
-  
-  /* ANIMASI */
-  @keyframes fadeIn {
-    from {opacity: 0; transform: scale(0.9);}
-    to {opacity: 1; transform: scale(1);}
-  }
-  /* ===== MODAL BACKGROUND ===== */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    animation: fadeInBg 0.3s ease;
-  }
-  
-  /* ===== BOX ===== */
-  .modal-content {
-    background: #fff;
-    margin: 5% auto;
-    padding: 25px;
-    width: 75%;
-    border-radius: 12px;
-    position: relative;
-    animation: scaleUp 0.3s ease;
-  }
-  
-  /* FLEX */
-  .modal-body {
-    display: flex;
-    gap: 25px;
-    align-items: flex-start;
-  }
-  
-  /* IMAGE */
-  .modal-img img {
-    width: 280px;
-    border-radius: 10px;
-  }
-  
-  /* INFO */
-  .modal-info {
-    flex: 1;
-  }
-  
-  .modal-price {
-    margin-top: 15px;
-    font-size: 22px;
-    font-weight: bold;
-    color: green;
-  }
-  
-  /* CLOSE BUTTON */
-  .close {
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    font-size: 28px;
-    cursor: pointer;
-  }
-  
-  /* BELI BUTTON */
-  .btn-beli {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: #28a745;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    transition: 0.3s;
-  }
-  
-  .btn-beli:hover {
-    background: #218838;
-  }
-  
-  /* ANIMATION */
-  @keyframes scaleUp {
-    from {transform: scale(0.8); opacity: 0;}
-    to {transform: scale(1); opacity: 1;}
-  }
-  
-  @keyframes fadeInBg {
-    from {opacity: 0;}
-    to {opacity: 1;}
-  }
-  
-  /* ===== RESPONSIVE HP ===== */
-  @media (max-width: 768px) {
-    .modal-body {
-      flex-direction: column;
-    }
-  
-    .modal-img img {
-      width: 100%;
-    }
-  }
-  #formPesanan input,
-  #formPesanan textarea {
-    width: 100%;
-    padding: 8px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .btn-submit {
-    background: #166534;
-    color: white;
-    padding: 10px;
-    border: none;
-    width: 100%;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .btn-submit:hover {
-    background: #14532d;
-  }
+}
 /* ===== MODAL BACKGROUND ===== */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    
-    /* PENTING */
-    overflow-y: auto; 
-    padding: 40px 15px;
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  animation: fadeInBg 0.3s ease;
+}
+
+/* ===== BOX ===== */
+.modal-content {
+  background: #fff;
+  margin: 5% auto;
+  padding: 25px;
+  width: 75%;
+  border-radius: 12px;
+  position: relative;
+  animation: scaleUp 0.3s ease;
+}
+
+/* FLEX */
+.modal-body {
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+}
+
+/* IMAGE */
+.modal-img img {
+  width: 280px;
+  border-radius: 10px;
+}
+
+/* INFO */
+.modal-info {
+  flex: 1;
+}
+
+.modal-price {
+  margin-top: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  color: green;
+}
+
+/* CLOSE BUTTON */
+.close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* BELI BUTTON */
+.btn-beli {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.btn-beli:hover {
+  background: #218838;
+}
+
+/* ANIMATION */
+@keyframes scaleUp {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
   }
-  
-  /* ===== MODAL CONTENT ===== */
-  .modal-content {
-    background: #fff;
-    margin: auto;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 700px;
-    animation: fadeIn 0.3s ease;
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
-  
-  /* ===== BODY DALAM MODAL ===== */
+}
+
+@keyframes fadeInBg {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===== RESPONSIVE HP ===== */
+@media (max-width: 768px) {
   .modal-body {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
+    flex-direction: column;
   }
-  
-  /* BIAR FORM BISA SCROLL JIKA PANJANG */
-  .modal-info {
-    flex: 1;
-    max-height: 70vh;
-    overflow-y: auto;
+
+  .modal-img img {
+    width: 100%;
   }
-  
-  /* CLOSE BUTTON */
-  .close {
-    float: right;
-    font-size: 28px;
-    cursor: pointer;
-    padding: 10px 15px;
+}
+#formPesanan input,
+#formPesanan textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn-submit {
+  background: #166534;
+  color: white;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background: #14532d;
+}
+/* ===== MODAL BACKGROUND ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+
+  /* PENTING */
+  overflow-y: auto;
+  padding: 40px 15px;
+}
+
+/* ===== MODAL CONTENT ===== */
+.modal-content {
+  background: #fff;
+  margin: auto;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 700px;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ===== BODY DALAM MODAL ===== */
+.modal-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* BIAR FORM BISA SCROLL JIKA PANJANG */
+.modal-info {
+  flex: 1;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+/* CLOSE BUTTON */
+.close {
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 10px 15px;
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 768px) {
+  .modal-body {
+    flex-direction: column;
   }
-  
-  /* RESPONSIVE HP */
-  @media (max-width: 768px) {
-    .modal-body {
-      flex-direction: column;
-    }
-  }
-  
+}
