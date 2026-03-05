@@ -93,52 +93,49 @@
   </main>
 
 
-  <!-- ================= FILOSOFI LOGO ================= -->
-<section class="filosofi-logo-section">
+  <section class="filosofi-logo-section">
 
-  <!-- tulisan vertikal -->
-  <div class="filosofi-vertical">Our Logo</div>
+  <h3 class="filosofi-title">
+    Filosofi
+    <span></span>
+  </h3>
 
   <div class="filosofi-wrapper">
 
     <!-- KIRI -->
-    <div class="filosofi-left">
+    <div class="filosofi-box reveal-left">
       <p>
         Dua daun di gagang skop melambangkan pertumbuhan,
-        harapan, dan keberlanjutan. Letaknya yang di atas
-        mencerminkan bahwa dari kerja keras akan tumbuh
-        kehidupan yang membawa kebaikan.
+        harapan, dan keberlanjutan. Dari kerja keras akan
+        tumbuh kehidupan yang membawa kebaikan.
       </p>
 
       <p>
-        Logo TumbuTani Nusantara menjadikan skop tani sebagai
-        simbol kerja keras, ketekunan, dan koneksi dengan tanah.
-        Skop ini juga mencerminkan transformasi pertanian
-        tradisional menuju sistem modern.
+        Skop tani menjadi simbol ketekunan dan koneksi
+        manusia dengan tanah sebagai sumber kehidupan.
       </p>
     </div>
 
-    <!-- TENGAH (LOGO) -->
-    <div class="filosofi-center">
+    <!-- LOGO -->
+    <div class="filosofi-center reveal-scale">
       <img src="assets/img/logo1.png" alt="Logo TumbuTani">
     </div>
 
     <!-- KANAN -->
-    <div class="filosofi-right">
+    <div class="filosofi-box reveal-right">
       <p>
-        Hadirnya beberapa hasil tani di dalam skop pada logo
-        TumbuTani Nusantara melambangkan kekayaan alam dan
-        potensi pertanian Indonesia yang beragam.
+        Hasil tani di dalam skop melambangkan kekayaan alam
+        Indonesia serta potensi pertanian yang beragam.
       </p>
 
       <p>
-        Diletakkan di dalam skop, elemen ini menggambarkan
-        bahwa segala hasil baik berasal dari kerja keras
-        yang bersentuhan langsung dengan tanah.
+        Semua hasil terbaik lahir dari proses panjang,
+        kerja keras, dan hubungan erat dengan alam.
       </p>
     </div>
 
   </div>
+
 </section>
 
 
@@ -194,39 +191,42 @@
     
     </section>
 
-  
-  
-        <section class="timeline-section">
-        <h2 class="section-title">Perjalanan TumbuTani</h2>
-        <div class="timeline-container">
-            <div class="timeline-line"></div>
-            
-            <div class="timeline-item top">
-            <div class="timeline-card">
-                    <h4>2023</h4>
-                    <p>Awal mula berdirinya tumbu tani .</p>
-                </div>
-                <div class="timeline-dot"></div>
-            </div>
-            <div class="timeline-item top">
-                <div class="timeline-card">
-                    <h4>2024</h4>
-                    <p>Pendirian TumbuTani di Tasikmalaya dengan fokus pada Cengek Domba.</p>
-                </div>
-                <div class="timeline-dot"></div>
-            </div>
+  <section class="timeline-section">
 
-            <div class="timeline-item bottom">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <h4>2025</h4>
-                    <p>Ekspansi lahan 30 tumbak dan digitalisasi sistem rantai pasok.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-</main>
+  <h2 class="timeline-title">
+    Perjalanan TumbuTani
+    <span></span>
+  </h2>
+
+  <div class="timeline">
+
+    <!-- ITEM -->
+    <div class="timeline-item reveal-left">
+      <div class="timeline-content">
+        <h3>2023</h3>
+        <p>Awal mula terbentuknya gagasan TumbuTani sebagai inisiatif pertanian berkelanjutan.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal-right">
+      <div class="timeline-content">
+        <h3>2024</h3>
+        <p>Pendirian TumbuTani di Tasikmalaya dengan fokus pengembangan Cengek Domba.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal-left">
+      <div class="timeline-content">
+        <h3>2025</h3>
+        <p>Ekspansi lahan hingga 30 tumbak serta digitalisasi sistem rantai pasok pertanian.</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+  
+       
 <script>
     const buttons = document.querySelectorAll(".read-more");
 
@@ -356,3 +356,25 @@
 
 </body>
 </html>
+
+<!-- Filosofi Logo -->
+<script>
+const reveals = document.querySelectorAll(
+  ".reveal-left, .reveal-right, .reveal-scale"
+);
+
+function revealOnScroll() {
+  const trigger = window.innerHeight * 0.85;
+
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+
+    if (top < trigger) {
+      el.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+</script>
+
