@@ -9,26 +9,7 @@
        <link rel="stylesheet" href="assets/css/produk.css">
 </head>
 <body>
-<header class="coba">
-  
-  <!-- LOGO + NAMA -->
-  <div class="logo-wrap">
-    <img src="assets/img/logo1.png" alt="Logo TumbuTani" class="logo-img">
-    <h1 class="logo-text">TumbuTani<span>.Nusantara</span></h1>
-  </div>
-
-  <!-- MENU -->
-  <nav>
-    <ul class="menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="tentang.html">Tentang Kami</a></li>
-      <li><a href="produk.html">Produk</a></li>
-      <li><a href="galeri.html">Galeri</a></li>
-      <li><a href="mitra.html">Mitra</a></li>
-    </ul>
-  </nav>
-
-</header>
+  <div id="navbar"></div>
 <section class="filosofi-logo-section">
 
   <h3 class="produk-title">
@@ -41,7 +22,46 @@
 <section class="produk-section">
   <div class="produk-container">
 
-    <!-- Produk 1 -->
+
+
+
+
+  <?php
+    include "config/koneksi.php";
+
+    $query = mysqli_query($conn,"SELECT * FROM produk");
+
+     while($data = mysqli_fetch_assoc($query)){
+  ?>
+
+      <div class="card">
+
+        <div class="img-wrap">
+          <img src="assets/img/produk/<?php echo $data['gambar']; ?>">
+        </div>
+
+         <h2><?php echo $data['nama_produk']; ?></h2>
+
+      <p>
+        <?php echo substr($data['deskripsi'],0,120); ?>...
+      </p>
+
+        <div class="price">
+          Rp <?php echo number_format($data['harga']); ?>
+        </div>
+
+        <a href="#" class="btn detail-btn"
+            data-title="<?php echo $data['nama_produk']; ?>"
+            data-image="assets/img/produk/<?php echo $data['gambar']; ?>"
+            data-desc="<?php echo $data['deskripsi']; ?>"
+            data-price="Rp <?php echo number_format($data['harga']); ?>">
+            Detail
+        </a>
+
+      </div>
+
+    <?php } ?>
+    <!-- Produk 1
     <div class="card">
       <div class="img-wrap">
         <img src="assets/img/semangka.jpg" alt="Premino">
@@ -63,7 +83,7 @@
     </div>
     
 
-    <!-- Produk 2 -->
+    Produk 2
     <div class="card">
         <div class="img-wrap">
         <img src="assets/img/cabai.jpg" alt="Premino">
@@ -82,7 +102,7 @@
         </a>
     </div>
 
-    <!-- Produk 3 -->
+    Produk 3 
     <div class="card">
         <div class="img-wrap">
         <img src="assets/img/pupuk.jpg" alt="Premino">
@@ -101,7 +121,7 @@
           Detail
         </a>
       </div>
-  </div>
+  </div>-->
 
 <!-- modal jeung detail -->
 <div id="modalDetail" class="modal">
@@ -205,6 +225,9 @@
     ©2022 – 2025. TumbuTani.Nusantara | Powered by IT Alomani Team®
   </div>
 
+    <!--memanggil navbar-->
+  <script src="assets/js/navbar.js"></script>
+  
   <script>
     const modal = document.getElementById("modalDetail");
     const modalImage = document.getElementById("modalImage");
