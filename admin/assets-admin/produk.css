@@ -1,0 +1,119 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Montserrat', sans-serif;
+}
+
+/* Background */
+body{
+    background:#f4f6f9;
+  
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:220px;
+    height:100vh;
+    background:#2e7d32;
+    padding:30px 20px;
+    color:white;
+    position:fixed;
+}
+
+.sidebar h2{
+    margin-bottom:40px;
+    font-size:24px;
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    margin:15px 0;
+    font-size:16px;
+    padding:8px 10px;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.sidebar a:hover{
+    background:rgba(255,255,255,0.2);
+}
+
+/* CONTENT */
+.main{
+    margin-left:240px;
+    padding:40px;
+
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* JUDUL */
+.card h2{
+    margin-bottom:20px;
+}
+
+/* TOMBOL TAMBAH */
+.btn-tambah{
+    display:inline-block;
+    background:#2e7d32;
+    color:white;
+    padding:10px 18px;
+    border-radius:8px;
+    text-decoration:none;
+    margin-bottom:20px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn-tambah:hover{
+    background:#1b5e20;
+}
+
+/* TABEL */
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+/* HEADER */
+table th{
+    background:#2e7d32;
+    color:white;
+    padding:12px;
+    text-align:left;
+}
+
+/* DATA */
+table td{
+    padding:12px;
+    border-bottom:1px solid #eee;
+}
+
+/* HOVER ROW */
+table tr:hover{
+    background:#f9f9f9;
+}
+
+/* AKSI */
+.aksi a{
+    text-decoration:none;
+    margin-right:10px;
+    font-weight:600;
+}
+
+.edit{
+    color:#1976d2;
+}
+
+.hapus{
+    color:#d32f2f;
+}
