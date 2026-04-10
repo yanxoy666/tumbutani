@@ -5,21 +5,22 @@
 /* Kotak Utama Visi Misi */
 .container-tentang {
     max-width: 1100px;
-    margin: 60px auto;
-    background: white;
-    padding: 60px 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    transition: all 0.4s ease;
+    margin: 80px auto;
+    padding: 70px 50px;
+    border-radius: 25px;
+
+    background: linear-gradient(135deg, #ffffff, #f3f8f3);
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    transition: all 0.5s ease;
     position: relative;
-    cursor: default;
 }
 
 .container-tentang:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    transform: translateY(-12px) scale(1.01);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.15);
 }
-
 .grid-tentang {
     display: flex;
     align-items: center;
@@ -34,11 +35,13 @@
 }
 
 .judul-kiri h2 {
-    font-size: 36px;
-    color: #1b5e20;
-    font-weight: 800;
-    line-height: 1.1;
-    margin: 0;
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1.2;
+
+    background: linear-gradient(90deg, #1b5e20, #43a047);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .judul-kiri .highlight {
@@ -48,33 +51,27 @@
 /* teks kanan */
 .teks-kanan {
     flex: 1.2;
-    border-left: 6px solid #ffd600;
+    border-left: none;
+    position: relative;
     padding-left: 30px;
-    font-size: 16px;
-    line-height: 1.8;
-    color: #444;
 }
-
 .teks-kanan strong {
     color: #1f6f54;
 }
 
 /* info card */
 .info-card {
-    background: white;
-    padding: 30px;
-    margin: 40px auto 100px auto;
-    max-width: 800px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    text-align: center;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    transition: 0.4s;
 }
 
 .info-card:hover {
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    transform: translateY(-10px);
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.15);
 }
 
 .info-card h3 {
@@ -179,17 +176,7 @@
     }
 }
 /* --- INFO CARD (EFEK MENGAMBANG) --- */
-.info-card {
-    background: white;
-    padding: 30px;
-    margin: 40px auto 100px auto; /* Margin bawah besar agar tidak tertutup footer */
-    max-width: 800px; /* Dibuat lebih lebar agar serasi */
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    text-align: center;
-}
+
 
 .info-card:hover {
     box-shadow: 0 20px 40px rgba(0,0,0,0.2);
@@ -649,4 +636,60 @@ nav ul li a {
 /* hover tetap smooth */
 nav ul li a:hover {
     transform: translateY(-2px);
+}
+
+.teks-kanan::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6px;
+    height: 0;
+    background: linear-gradient(#ffd600, #ff9800);
+    border-radius: 10px;
+    animation: lineHeight 1.2s ease forwards;
+}
+
+@keyframes lineHeight {
+    to {
+        height: 100%;
+    }
+}
+
+.container-tentang::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(67,160,71,0.15), transparent);
+    top: -50px;
+    right: -50px;
+    z-index: 0;
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.fade-up.active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.8s ease;
+}
+
+.teks-kanan {
+    color: #444;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .grid-tentang {
+        gap: 30px;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
 }

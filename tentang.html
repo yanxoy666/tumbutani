@@ -10,13 +10,13 @@
 </head>
 <body>
 
-<<<<<<< HEAD
+
 <body>
 
 <div id="navbar"></div>
-=======
+
   <div id="navbar"></div>
->>>>>>> 87112d77b7f983dc2aa66b87112fb3374fd462f8
+
 
 <main class="main-content">
   
@@ -26,7 +26,7 @@
 
             <div class="grid-tentang slide">
             <div class="judul-kiri">
-              <span class="sub-title">Pengertian</span>
+              <span class="sub-title"></span>
               <h2>Apa<br> <span class="highlight">Itu</span> <br>Tumbutani</h2>
             </div>
             <div class="teks-kanan">
@@ -38,7 +38,7 @@
 
             <div class="grid-tentang slide">
             <div class="judul-kiri">
-              <span class="sub-title">TENTANG KAMI</span>
+              <span class="sub-title"></span>
               <h2>Visi dan <br> <span class="highlight">Pertumbuhan</span> <br> Jangka Panjang</h2>
             </div>
             <div class="teks-kanan">
@@ -49,7 +49,7 @@
   
           <div class="grid-tentang slide">
             <div class="judul-kiri">
-              <span class="sub-title">INOVASI</span>
+              <span class="sub-title"></span>
               <h2>Teknologi dan <br> <span class="highlight">Modernisasi</span> <br> Pertanian</h2>
             </div>
             <div class="teks-kanan">
@@ -365,5 +365,19 @@ function revealOnScroll() {
 }
 
 window.addEventListener("scroll", revealOnScroll);
+
+const items = document.querySelectorAll(".fade-up");
+
+window.addEventListener("scroll", () => {
+  items.forEach(item => {
+    const posisi = item.getBoundingClientRect().top;
+    const tinggi = window.innerHeight;
+
+    if (posisi < tinggi - 100) {
+      item.classList.add("active");
+    }
+  });
+});
 </script>
+
 

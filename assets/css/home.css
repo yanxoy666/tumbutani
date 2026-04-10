@@ -111,3 +111,19 @@
   color: #ff6600;
   letter-spacing: 1px;
 }
+
+.about-container p {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #555;
+
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+/* Saat muncul */
+.about-container p.show {
+  opacity: 1;
+  transform: translateY(0);
+}
