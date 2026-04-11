@@ -53,18 +53,48 @@
   <div class="hero-dots"></div>
 </section>
 
-<section class="about-section">
-  <div class="about-container">
-    <h2>TumbuTANI.Nusantara</h2>
-    <p>
-     TumbuTANI?
-TUMBUTANI NUSANTARA, dari Tasikmalaya, Jawa Barat, berdedikasi pada pertanian cabai rawit domba (cengek domba) berkualitas tinggi. Kami terus berupaya menerapkan pertanian modern untuk hasil dan mutu terbaik, sekaligus aktif meningkatkan efisiensi produksi dan memperluas pasar. Diversifikasi produk dan pemanfaatan sumber daya berkelanjutan juga menjadi fokus utama kami.
-Bersama TUMBUTANI NUSANTARA, pedas berkualitas dari Tasikmalaya siap menjangkau seluruh negeri.
-    </p>
+<section class="welcome-section">
+
+  <div class="welcome-container">
+
+    <!-- TEXT -->
+    <div class="welcome-text reveal-left">
+      <h1>
+        Selamat Datang di <br>
+        <span>TumbuTani Nusantara</span>
+      </h1>
+
+      <p>
+        Website ini kami dedikasikan untuk para petani Indonesia melalui 
+       <strong>TumbuTANI.Nusantara</strong> sebagai wadah informasi, edukasi, dan solusi pertanian.
+         Kami merangkum berbagai pengetahuan teknis, pengalaman,
+          serta produk unggulan untuk membantu meningkatkan kualitas dan hasil usaha tani secara berkelanjutan.
+      </p>
+
+      <p>
+        Kami hadir bukan sebagai yang pertama atau terbaik,
+         tetapi membawa pendekatan berbeda—memberikan wawasan praktis, 
+         akses produk pertanian, serta panduan menemukan mitra penyalur terdekat. 
+         Semua kami hadirkan secara jelas, sederhana, dan mudah diakses oleh para petani.
+
+          <p><strong> Bersama TumbuTani Nusantara, mari tumbuh dan maju bersama. 
+            Salam mitra bertani. 🌱</strong></p>
+      </p>
+
+      <div class="welcome-buttons">
+        <a href="produk.php" class="btn-primary">Lihat Produk</a>
+        <a href="tentang.html" class="btn-secondary">Pelajari Kami</a>
+      </div>
+    </div>
+
+    <!-- IMAGE -->
+    <div class="welcome-image reveal-right">
+      <img src="assets/img/Panencabai.png" alt="Pertanian Modern">
+    </div>
+
   </div>
+
 </section>
-
-
   
 </section>
     <section class="team-section">
@@ -190,6 +220,19 @@ Bersama TUMBUTANI NUSANTARA, pedas berkualitas dari Tasikmalaya siap menjangkau 
   
   <!--memanggil navbar-->
   <script src="assets/js/navbar.js"></script>
+
+  <script>
+const reveals = document.querySelectorAll(".reveal-left, .reveal-right");
+
+window.addEventListener("scroll", () => {
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      el.classList.add("active");
+    }
+  });
+});
+</script>
 
 </body>
 </html>
