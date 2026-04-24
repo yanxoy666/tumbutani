@@ -1,159 +1,114 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Galeri</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="assets/css/galeri.css" />
-  </head>
-      
-  <div id="navbar"></div>
-  <body class="company-mode">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeri</title>
 
-    <!-- JUDUL (TIDAK DIUBAH STRUKTUR) -->
-    <h1 class="judul-galeri show">Galeri Dari TumbuTani.Nusantara</h1>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/css/galeri.css">
+</head>
 
-    <section class="galeri">
+<body class="company-mode">
 
-      <div class="galeri-grid">
+<!-- NAVBAR (TETAP) -->
+<div id="navbar"></div>
 
-        <!-- ITEM 1 -->
-        <div class="galeri-item">
-          <img src="assets/img/Panencabai.png" alt="Panen Cabai" loading="lazy"/>
-          <div class="overlay">
-            <h3>Panen Bersama</h3>
-            <p>Hasil cabai segar berkualitas tinggi</p>
-          </div>
-        </div>
+<div class="galeri-wrap">
 
-        <!-- ITEM 2 -->
-        <div class="galeri-item">
-          <img src="assets/img/lahan.png" alt="Lahan Pertanian" loading="lazy"/>
-          <div class="overlay">
-            <h3>Lahan Pertanian</h3>
-            <p>Lahan subur untuk pertanian modern</p>
-          </div>
-        </div>
+  <!-- HERO -->
+  <div class="galeri-hero">
+    <h1>Galeri <em>TumbuTani</em></h1>
+    <p>Momen terbaik dari proses pertanian kami.</p>
+  </div>
 
-        <!-- ITEM 3 -->
-        <div class="galeri-item">
-          <img src="assets/img/petanimenanam.png" alt="Kegiatan Petani" loading="lazy"/>
-          <div class="overlay">
-            <h3>Kegiatan Petani</h3>
-            <p>Proses penanaman oleh petani lokal</p>
-          </div>
-        </div>
+  <!-- FILTER -->
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterGaleri(this,'all')">Semua</button>
+    <button class="filter-btn" onclick="filterGaleri(this,'panen')">Panen</button>
+    <button class="filter-btn" onclick="filterGaleri(this,'lahan')">Lahan</button>
+    <button class="filter-btn" onclick="filterGaleri(this,'petani')">Petani</button>
+    <button class="filter-btn" onclick="filterGaleri(this,'video')">Video</button>
+  </div>
 
-        <!-- ITEM 4 -->
-        <div class="galeri-item">
-          <img src="assets/img/Lahan2.png" alt="Lahan Siap Panen" loading="lazy"/>
-          <div class="overlay">
-            <h3>Siap Panen</h3>
-            <p>Tanaman siap dipanen dengan hasil optimal</p>
-          </div>
-        </div>
+  <!-- GRID -->
+  <div class="galeri-grid">
 
+    <div class="galeri-item" data-cat="panen" onclick="openLb(0)">
+      <img src="assets/img/Panencabai.png">
+      <span class="item-tag">Panen</span>
+      <div class="item-overlay">
+        <h3>Panen Bersama</h3>
+        <p>Cabai segar berkualitas tinggi</p>
       </div>
-    </section>
-
-    <!-- LIGHTBOX -->
-    <div class="lightbox" id="lightbox">
-      <span class="close">&times;</span>
-      <img class="lightbox-img" id="lightbox-img" />
     </div>
 
-    <!-- FOOTER (TIDAK DIUBAH) -->
-    <footer class="footer-pro">
-      <div class="footer-container">
-        <div class="footer-col about">
-          <img
-            src="https://ugc.production.linktr.ee/a7b80433-be7e-4b9b-8e8a-80348120588f_2d07dbedeccd5530edff1f19b74ed481-tplv-tiktokx-cropcenter-1080-1080.jpeg?io=true&size=avatar-v3_0"
-            alt="Logo"
-            class="footer-logo"
-          />
-          <p>
-            Produsen penyedia aneka macam pupuk, produk-produk pertanian dan
-            perkebunan.
-          </p>
-
-          <div class="footer-social">
-            <a href="https://www.facebook.com/profile.php?id=61575866347115" class="s fb">f</a>
-            <a href="https://www.instagram.com/tumbutani.nusantara/" class="s ig">ig</a>
-            <a href="https://www.tiktok.com/@tumbutani.nusantara" class="s tt">tt</a>
-            <a href="https://api.whatsapp.com/send/?phone=6282260067197" class="s yt">💬</a>
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <h3>Navigasi</h3>
-          <ul class="footer-menu">
-            <li><a href="index.html">› Home</a></li>
-            <li><a href="tentang.html">› Tentang Kami</a></li>
-            <li><a href="produk.php">› Produk</a></li>
-            <li><a href="galeri.html">› Galeri</a></li>
-            <li><a href="mitra.html">› Mitra</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h3>Alamat & Kontak</h3>
-          <p>📍 Batusumur, Manonjaya, Tasikmalaya</p>
-          <p>📞 0822-6006-7197</p>
-          <p>✉️ tumbutaninusantara@gmail.com</p>
-        </div>
+    <div class="galeri-item" data-cat="lahan" onclick="openLb(1)">
+      <img src="assets/img/lahan.png">
+      <span class="item-tag">Lahan</span>
+      <div class="item-overlay">
+        <h3>Lahan Pertanian</h3>
+        <p>Lahan subur modern</p>
       </div>
+    </div>
 
-      <div class="footer-bottom">
-        ©2022 – 2025. TumbuTani.Nusantara
+    <div class="galeri-item" data-cat="petani" onclick="openLb(2)">
+      <img src="assets/img/petanimenanam.png">
+      <span class="item-tag">Petani</span>
+      <div class="item-overlay">
+        <h3>Kegiatan Petani</h3>
+        <p>Proses penanaman</p>
       </div>
-    </footer>
+    </div>
 
-    <script src="assets/js/navbar.js"></script>
+    <div class="galeri-item" data-cat="lahan" onclick="openLb(3)">
+      <img src="assets/img/Lahan2.png">
+      <span class="item-tag">Lahan</span>
+      <div class="item-overlay">
+        <h3>Siap Panen</h3>
+        <p>Hasil optimal</p>
+      </div>
+    </div>
 
-    <!-- JAVASCRIPT TETAP -->
-    <script>
-      const imgs = document.querySelectorAll(".galeri-item img");
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightbox-img");
-      const closeBtn = document.querySelector(".close");
+    <!-- VIDEO -->
+    <div class="galeri-item" data-cat="video" onclick="openVideo()">
+      <img src="assets/img/thumbnail-video.jpg">
+      <span class="item-tag">Video</span>
+      <div class="video-play-btn">▶</div>
+      <div class="item-overlay">
+        <h3>Video Kegiatan</h3>
+        <p>Klik untuk menonton</p>
+      </div>
+    </div>
 
-      imgs.forEach((img) => {
-        img.addEventListener("click", () => {
-          lightbox.classList.add("show");
-          lightboxImg.src = img.src;
-        });
-      });
+  </div>
+</div>
 
-      closeBtn.onclick = () => lightbox.classList.remove("show");
+<!-- LIGHTBOX GAMBAR -->
+<div class="lb" id="lb" onclick="closeLb(event)">
+  <div class="lb-inner">
+    <button class="lb-close" onclick="closeLb()">✕</button>
+    <img id="lbImg">
+    <div class="lb-caption">
+      <h3 id="lbTitle"></h3>
+      <p id="lbDesc"></p>
+    </div>
+  </div>
+</div>
 
-      lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) lightbox.classList.remove("show");
-      });
+<!-- LIGHTBOX VIDEO -->
+<div class="lb" id="videoLb" onclick="closeVideo(event)">
+  <div class="lb-inner">
+    <button class="lb-close" onclick="closeVideo()">✕</button>
+    <video id="videoPlayer" controls>
+      <source src="assets/video/tumbutani.mp4">
+    </video>
+  </div>
+</div>
 
-      const items = document.querySelectorAll(".galeri-item");
+<script src="assets/js/navbar.js"></script>
+<script src="assets/js/galeri.js"></script>
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-          }
-        });
-      });
-
-      items.forEach((item) => observer.observe(item));
-
-// Mouse tracker untuk spotlight
-document.querySelectorAll('.galeri-item').forEach(item => {
-  item.addEventListener('mousemove', e => {
-    const rect = item.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    item.style.setProperty('--mouse-x', x + '%');
-    item.style.setProperty('--mouse-y', y + '%');
-  });
-});
-    </script>
-
-  </body>
+</body>
 </html>
