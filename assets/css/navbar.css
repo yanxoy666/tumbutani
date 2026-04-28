@@ -1,23 +1,54 @@
-/* ===== LOGO NAVBAR ===== */
+/* ===================== */
+/* LOGO NAVBAR */
+/* ===================== */
 
 .logo-wrap {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
+/* logo gambar */
 .logo-img {
-    width: 45px;
-    height: 45px;
-    object-fit: contain;
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
 }
 
+/* teks logo */
 .logo-text {
-    font-size: 22px;
-    font-weight: 700;
-    color: #1f6f54;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1f6f54;
+  white-space: nowrap; /* biar gak turun */
 }
 
 .logo-text span {
-    color: #ffcc00;
+  color: #ffcc00;
+}
+
+/* ===================== */
+/* MOBILE */
+/* ===================== */
+@media (max-width: 768px) {
+
+  .logo-img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .logo-text {
+    font-size: 16px;
+  }
+
+  .logo-wrap {
+    gap: 6px;
+  }
+
+}
+
+.logo-text {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
