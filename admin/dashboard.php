@@ -27,3 +27,34 @@ $isAjax = isset($_GET['content_only']);
 </body>
 </html>
 <?php endif; ?>
+
+<?php
+include "../config/koneksi.php";
+
+$data = mysqli_query($conn, "SELECT * FROM produk ORDER BY id DESC");
+?>
+
+<h3>Data Produk</h3>
+
+<table border="1" cellpadding="10" cellspacing="0">
+    <tr>
+        <th>No</th>
+        <th>Nama</th>
+        <th>Deskripsi</th>
+        <th>Harga</th>
+        <th>Gambar</th>
+    </tr>
+
+    <?php $no = 1; ?>
+    <?php while($row = mysqli_fetch_assoc($data)) : ?>
+    <tr>
+        <td><?= $no++; ?></td>
+        <td><?= $row['nama']; ?></td>
+        <td><?= $row['deskripsi']; ?></td>
+        <td><?= $row['harga']; ?></td>
+        <td>
+            <img src="../assets/img/produk/<?= $row['gambar']; ?>" width="80">
+        </td>
+    </tr>
+    <?php endwhile; ?>
+</table>
